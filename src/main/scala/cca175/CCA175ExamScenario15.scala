@@ -20,6 +20,8 @@ object CCA175ExamScenario15 extends App {
     .csv("src/main/resources/retail_db/orders")
     .toDF("order_id", "order_date", "order_customer_id", "order_status")
 
+  orders.schema.fieldNames.foreach(println)
+
   val customers = spark.read
     .option("inferSchema", true)
     .csv("src/main/resources/retail_db/customers")
@@ -35,7 +37,7 @@ object CCA175ExamScenario15 extends App {
     .sort(desc("count"))*/
 
   // Using SQL query
-  customers.createOrReplaceTempView("customers")
+  /*customers.createOrReplaceTempView("customers")
   orders.createOrReplaceTempView("orders")
 
   val query =
@@ -51,7 +53,7 @@ object CCA175ExamScenario15 extends App {
 
   val result = spark.sql(query)
   result.select("customer_fname", "customer_lname", "count")
-    .show(false)
+    .show(false)*/
 
   /*result.repartition(1)
     .map(row => row.mkString("|"))
