@@ -2,7 +2,7 @@ package rdd.transformations
 
 import org.apache.spark.sql.SparkSession
 
-object ReduceByKeyExample extends App {
+object AggregateByKeyExample extends App {
 
   // Creating a SparkContext object.
   val sparkContext = SparkSession.builder()
@@ -11,3 +11,4 @@ object ReduceByKeyExample extends App {
     .getOrCreate()
     .sparkContext
 }
+
