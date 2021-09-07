@@ -44,5 +44,4 @@ object FlatMapExample extends App {
    * BAT
    * BAT
    */
-
 }
