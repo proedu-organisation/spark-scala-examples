@@ -30,4 +30,17 @@ object GroupByExample extends App {
    * (6,CompactBuffer(Lenevo))
    * (7,CompactBuffer(Anvisha))
    */
+
+  // Group elements based on their first character.
+  val groupedRDDNew = wordsRDD.groupBy(word => word.charAt(0))
+
+  // Let's print some data.
+  groupedRDDNew.collect.foreach(println)
+
+  /** Output
+   * (A,CompactBuffer(Anvisha))
+   * (J,CompactBuffer(John, Jimmy, Jacky, John, Jimmy, Jimmy))
+   * (T,CompactBuffer(Tom))
+   * (L,CompactBuffer(Lenevo))
+   */
 }
